@@ -12,8 +12,10 @@
     <script>
         const el = document.getElementById('console')
 
-        document.addEventListener('DOMContentLoaded', () => {
-            el.innerText = '1234'
+        document.addEventListener('DOMContentLoaded', async () => {
+            const resp = await fetch('https://json-placeholder.mock.beeceptor.com/posts')
+            const data = await resp.json()
+            el.innerText = JSON.stringify(data)
         })
     </script>
 </body>
